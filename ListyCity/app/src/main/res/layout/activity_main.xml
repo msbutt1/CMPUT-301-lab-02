@@ -40,11 +40,10 @@
 
     <ListView
         android:id="@+id/city_list"
-        android:layout_width="420dp"
-        android:layout_height="580dp"
-        android:layout_marginTop="92dp"
+        android:layout_width="401dp"
+        android:layout_height="531dp"
+        android:layout_marginTop="84dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -55,24 +54,25 @@
         android:layout_width="210dp"
         android:layout_height="59dp"
         android:hint="@string/city_name"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/city_list"
-        android:visibility="gone"
-        />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/confirm_button"
         android:layout_width="169dp"
         android:layout_height="59dp"
         android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textInputEditText"
-        app:layout_constraintTop_toBottomOf="@+id/city_list"
         android:text="@string/confirm"
         android:visibility="gone"
-        >
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toEndOf="@+id/textInputEditText"
+        app:layout_constraintTop_toBottomOf="@+id/city_list"
+        app:layout_constraintVertical_bias="0.0">
 
 
     </Button>
