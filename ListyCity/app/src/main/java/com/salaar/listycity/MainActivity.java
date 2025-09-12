@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     Button confButton;
     EditText inputBox;
     String newCity;
+    int selectedPosition = -1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,11 +86,19 @@ public class MainActivity extends AppCompatActivity {
         cityList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                selectedPosition = position;
                 delButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        dataList.remove(position);
-                        cityAdapter.notifyDataSetChanged();
+
+                        if (selectedPosition != -1) {
+                            dataList.remove(position);
+                            cityAdapter.notifyDataSetChanged();
+                            selectedPosition = -1;
+                        } else {
+                            Toast.makeText(MainActivity.this, "Please select a city to delete!", Toast.LENGTH_SHORT).show();
+                        }
+
 
                     }
                 });
